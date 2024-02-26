@@ -104,6 +104,7 @@ def app():
         X_train, X_test, y_train, y_test = train_test_split(X, y, \
             test_size=0.2, random_state=42)
 
+        st.subheader("Logistic Regression")
         clf = LogisticRegression(C=1.0, class_weight=None, 
             dual=False, fit_intercept=True,
             intercept_scaling=1, max_iter=100, multi_class='auto',
@@ -113,10 +114,12 @@ def app():
         y_test_pred = classify(clf, X_train, X_test, y_train, y_test)
         visualize_classifier(clf, X_test, y_test_pred)
         
+        st.subheader("Naive Bayes")
         clf = GaussianNB()
         y_test_pred = classify(clf, X_train, X_test, y_train, y_test)
         visualize_classifier(clf, X_test, y_test_pred)
         
+        st.subheader("Support Vector Machine")
         clf = svm.SVC(kernel='linear', C=1000)
         y_test_pred = classify(clf, X_train, X_test, y_train, y_test)
         visualize_classifier(clf, X_test, y_test_pred)
