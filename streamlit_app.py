@@ -110,15 +110,15 @@ def app():
             n_jobs=1, penalty='l2', random_state=42, solver='lbfgs',
             tol=0.0001, verbose=0, warm_start=False)
 
-        classify(clf, X_train, X_test, y_train, y_test)
+        y_test_pred = classify(clf, X_train, X_test, y_train, y_test)
         visualize_classifier(clf, X_test, y_test_pred)
         
         clf = GaussianNB()
-        classify(clf, X_train, X_test, y_train, y_test)
+        y_test_pred = classify(clf, X_train, X_test, y_train, y_test)
         visualize_classifier(clf, X_test, y_test_pred)
         
         clf = svm.SVC(kernel='linear', C=1000)
-        classify(clf, X_train, X_test, y_train, y_test)
+        y_test_pred = classify(clf, X_train, X_test, y_train, y_test)
         visualize_classifier(clf, X_test, y_test_pred)
 
 
@@ -133,6 +133,8 @@ def classify(clf, X_train, X_test, y_train, y_test):
         st.subheader('Performance Metrics')
         st.text(classification_report(y_test, y_test_pred))
         st.subheader('Visualization')
+
+        return y_test_pred
 
 def visualize_classifier(classifier, X, y, title=''):
     # Define the minimum and maximum values for X and Y
