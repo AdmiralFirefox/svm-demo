@@ -122,7 +122,7 @@ def app():
         visualize_classifier(clf, X_test, y_test_pred)
 
 
-def classify(clf):
+def classify(clf, X_train, X_test, y_train, y_test):
         clf.fit(X_train,y_train)
         y_test_pred = clf.predict(X_test)
         st.subheader('Confusion Matrix')
