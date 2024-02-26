@@ -104,7 +104,7 @@ def app():
         X_train, X_test, y_train, y_test = train_test_split(X, y, \
             test_size=0.2, random_state=42)
 
-         clf = LogisticRegression(C=1.0, class_weight=None, 
+        clf = LogisticRegression(C=1.0, class_weight=None, 
             dual=False, fit_intercept=True,
             intercept_scaling=1, max_iter=100, multi_class='auto',
             n_jobs=1, penalty='l2', random_state=42, solver='lbfgs',
