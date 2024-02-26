@@ -77,7 +77,7 @@ def app():
         value=2,  # Initial value
     )
 
-"""
+
     # Create the selecton of classifier
     clf = GaussianNB() 
     options = ['Logistic Regression', 'Naive Bayes', 'Support Vector Machine']
@@ -93,6 +93,7 @@ def app():
     else:
         clf = GaussianNB()
         
+"""        
     if st.button('Start'):
         centers = generate_random_points_in_square(-4, 4, -4, 4, n_clusters)
         X, y = make_blobs(n_samples=n_samples, n_features=2,
